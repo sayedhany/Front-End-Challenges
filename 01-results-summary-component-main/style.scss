@@ -3,7 +3,7 @@
   font-family: "Hanken Grotesk";
   src: url("./assets/fonts/HankenGrotesk-VariableFont_wght.ttf")
 }
-$mobile: 375px;
+$mobile: 675px;
 $desktop: 1440px;
 $light-red: hsl(0, 100%, 67%);
 $orangey-yellow: hsl(39, 100%, 56%);
@@ -25,6 +25,9 @@ $border-circle: 50%;
   margin: 0;
   box-sizing: border-box;
 }
+li{
+  list-style: none;
+}
 html{
   font-size: 62.5%;
 }
@@ -41,7 +44,11 @@ main{
 }
 .container{
   // height: 63vh;
-  width: 46vw;
+  width: 68.3rem;
+  @media (max-width: $mobile) {
+    
+    width: 100%;
+  }
   // background-color: red;
   background-color: $white;
   box-shadow: 1px 1px 11px  $green-teal;
@@ -49,6 +56,11 @@ main{
   justify-content: center;
   border-radius: $border-rad;
   overflow: hidden;
+  @media (max-width: $mobile) {
+    
+    
+    flex-direction: column;
+  }
   & > div{
     // border: 1px solid red;
     flex: 1;
@@ -102,6 +114,82 @@ main{
     &-content-paragraph{
       font-size: 1.8rem;
       color: $light-lavender;
+    }
+  }
+}
+.right{
+  &-content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    // align-items: space-between;
+    // justify-content: center;
+    padding: 3rem;
+  }
+  &-content-heading{
+    font-size: 2rem;
+    margin-bottom: 3.5rem;
+
+  }
+  .item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    &:not(:last-of-type){
+      margin-bottom: 1rem;
+    }
+    & > div{
+      display: flex;
+      align-items: center;
+      
+    }
+    &-image{
+      img{
+
+        display: inline-block;
+        margin-right: 0.5rem;
+      }
+    }
+    &-numbers{
+      span:last-child{
+        color: $light-lavender;
+      }
+    }
+    &-1{
+      background: rgba($color: $light-red, $alpha: 0.1);
+      color: $light-red;
+    }
+    &-2{
+      background: rgba($color: $orangey-yellow, $alpha: 0.1);
+      color: $orangey-yellow;
+    }
+    &-3{
+      background: rgba($color: $green-teal, $alpha: 0.1);
+      color: $green-teal;
+      
+    }
+    &-4{
+      background: rgba($color: $cobalt-blue, $alpha: 0.1);
+      color: $cobalt-blue;
+      
+    }
+  }
+  .contenue-btn{
+    .btn{
+      width: 100%;
+      border: none;
+      padding: 1.5rem;
+      margin-top: 4rem;
+      background: $dark-gray-blue;
+      color: white;
+      border-radius: 2.5rem;
+      cursor: pointer;
+      // transition: all 0.3s ;
+      &:hover{
+        background: linear-gradient(to bottom, $light-slate-blue, $light-royal-blue);
+      }
     }
   }
 }
